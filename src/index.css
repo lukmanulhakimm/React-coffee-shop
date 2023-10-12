@@ -1,69 +1,186 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;1,200;1,300&family=Rubik:ital,wght@0,300;0,400;1,300;1,400&family=Sacramento&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@layer components {
+  .clickable{
+    @apply hover:opacity-80 cursor-pointer
   }
-  a:hover {
-    color: #747bff;
+    .grid-template {
+      @apply grid grid-cols-12 gap-[16px] md:gap-[24px] lg:gap-[32px];
+    }
+    .wrapper {
+      @apply flex justify-center;
+    }
+    .container {
+      @apply max-w-[1440px] px-[20px] md:px-[60px] lg:px-[120px];
+    }
+
+    .home-gradient{
+      background: linear-gradient(168.18deg, #777C82 -114.74%, #0B0909 91.35%);
+
+    }
+
+    .section-title-text {
+      @apply font-jakarta text-[24px] md:text-[48px] leading-[60px] font-medium;
+    }
+
+    .font-sm {
+      /* 12 */
+      @apply text-xs leading-[15.12px] font-normal;
+    }
+
+    .font-md {
+      /* 14 */
+      @apply text-sm leading-[17.64px] font-normal;
+    }
+
+    .font-lg {
+      /* 16 */
+      @apply text-base leading-5 font-normal;
+    }
+
+    .font-xl {
+      /* 18 */
+      @apply text-lg leading-[22.68px] ;
+    }
+
+    .font-xxl {
+      /* 22 */
+      @apply text-[22px] leading-[27.72px] ;
+    }
+
+    
+    .font-desc {
+      @apply font-sm md:font-md;
+    }
+
+    .font-title {
+      @apply text-4xl  lg:text-[48px] leading-[60px];
+    }
+
+    .btn {
+      @apply flex justify-center px-[12px] py-[8px] rounded-[6px] clickable items-center
+    }
+
+    .mobile-only{
+
+    }
+    .filter-mobile{
+
+    }
+    /* hamburger start */
+    .hamburger-line {
+      @apply w-[30px] h-[2px] my-2 block bg-white;
+    }
+    
+    .hamburger-active > span:nth-child(1) {
+      @apply rotate-45;
+    }
+    .hamburger-active > span:nth-child(2) {
+      @apply scale-0;
+    }
+    .hamburger-active > span:nth-child(3) {
+      @apply -rotate-45;
+    }
+    /* hamburger end */
+  /* checkbox start*/
+  
+  /* checkbox end*/
+
+    .icons {
+      @apply w-8 h-8 cursor-pointer;
+    }
+    
+    .form-control {
+      @apply bg-[#fcfdfe] flex gap-1 items-center my-3 px-3 rounded-md;
+      border: 1px solid #dedede;
+    }
+    .input-focus {
+      @apply border-none outline-none ;
+    }
+
+    .input-control {
+      @apply py-3 w-full rounded-md bg-inherit font-normal
+    }
+    
+    .shadow {
+      box-shadow: 0px 4px 10px 0px #00000014;
+
+    }
+   
+    
   }
-  button {
-    background-color: #f9f9f9;
+  .input-slider .range-slider {
+    height: 5px;
+    position: relative;
+    background-color: white;
+    border-radius: 2px;
   }
-}
+  .input-slider .range-selected {
+    height: 100%;
+    left: 30%;
+    right: 30%;
+    position: absolute;
+    border-radius: 5px;
+    background-color: #ff8906;
+  }
+  
+  .input-slider .range-input {
+    position: relative;
+  }
+  .input-slider .range-input input {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    top: -7px;
+    background: none;
+    pointer-events: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  .input-slider .range-input input::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 3px solid white;
+    background-color: #fff;
+    pointer-events: auto;
+    -webkit-appearance: none;
+  }
+  .input-slider .range-input input::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 3px solid #1b53c0;
+    background-color: #fff;
+    pointer-events: auto;
+    -moz-appearance: none;
+  }
+  
+  .input-slider .range-price {
+    margin: 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .input-slider .range-price label {
+    margin-right: 5px;
+  }
+  .input-slider .range-price input {
+    width: 100px;
+    padding: 5px;
+    background: none;
+    color: white;
+    border: none;
+  }
+  .input-slider .range-price input:focus {
+    border: none;
+    outline: none;
+  }
+  .input-slider .range-price input:first-of-type {
+    margin-right: 15px;
+  }
+  
