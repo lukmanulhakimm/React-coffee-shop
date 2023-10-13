@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-
 const Navbar = (props) => {
+  const [showDown, setShowdown] = useState(false);
   return (
     <>
       <header className={"wrapper z-10 w-full fixed top-0 left-0 " + props.bg}>
@@ -38,6 +39,15 @@ const Navbar = (props) => {
                 name="hamburger"
                 type="button"
                 className="block absolute right-4"
+                onClick={() => {
+                  if (showDown === false) {
+                    setShowdown(true);
+                    console.log("berhasil");
+                  } else {
+                    setShowdown(false);
+                    console.log("gagal");
+                  }
+                }}
               >
                 <span className="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
                 <span className="hamburger-line transition duration-300 ease-in-out"></span>
@@ -45,7 +55,10 @@ const Navbar = (props) => {
               </button>
               <div
                 id="nav-menu"
-                className="hidden absolute py-5 bg-white shadow-lg rounded-lg md:w-full right-4 top-full max-w-[200px]"
+                className={`${
+                  showDown ? "" : "hidden"
+                } absolute py-5 bg-white shadow-lg rounded-lg md:w-full right-4 top-full max-w-[200px]"
+                `}
               >
                 <ul className="block">
                   <li className="group">
@@ -113,10 +126,19 @@ const Navbar = (props) => {
                   alt="dropdown"
                   id="drop-down"
                   className="icons"
+                  onClick={() => {
+                    if (showDown === false) {
+                      setShowdown(true);
+                    } else {
+                      setShowdown(false);
+                    }
+                  }}
                 />
                 <div
                   id="menu-down"
-                  className="hidden absolute py-4 bg-white shadow-lg rounded-lg md:w-full right-4 top-full max-w-[200px]"
+                  className={`${
+                    showDown ? "" : "hidden"
+                  } absolute py-4 bg-white shadow-lg rounded-lg md:w-full right-4 top-full max-w-[200px]`}
                 >
                   <ul className="flex flex-col gap-3">
                     <li className="group">

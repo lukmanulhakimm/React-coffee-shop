@@ -1,10 +1,15 @@
+import { useState } from "react";
 import MainLayout from "../components/layouts/MainLayout/MainLayout";
+import Modal from "../components/Forms/modal";
 
 const Checkout = () => {
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <>
       <MainLayout bg="bg-[#0B0909]" mt="mt-[178px]">
         <div className="wrapper">
+          <Modal open={openModal} setOpen={setOpenModal} />
           <div className="container">
             <h1 className="md:font-title font-medium text-2xl text-[#0B132A]">
               Payment Details
@@ -101,6 +106,15 @@ const Checkout = () => {
                       <p className="font-bold">Idr.44.000</p>
                     </div>
                     <button
+                      onClick={() => {
+                        if (openModal === false) {
+                          setOpenModal(true);
+                          console.log("berhasil");
+                        } else {
+                          setOpenModal(false);
+                          console.log("gagal");
+                        }
+                      }}
                       id="modal-trigger"
                       className="w-full font-semibold btn py-2 rounded-md bg-primary mb-5"
                     >
