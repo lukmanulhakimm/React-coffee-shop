@@ -21,5 +21,6 @@ export default {
       },
     },
   },
+  safelist: ["bg-[#dd17b2]", "mt-[100px]", "md:mt-[186px]"],
   plugins: [],
 };

@@ -5,7 +5,7 @@ const MainLayout = (props) => {
   return (
     <>
       <Navbar bg={props.bg} border={props.border} borderP={props.borderP} />
-      <main className=" font-jakarta">{props.children}</main>
+      <main className={" font-jakarta " + props.mt}>{props.children}</main>
       <Footer />
     </>
   );
