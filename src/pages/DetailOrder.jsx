@@ -1,7 +1,6 @@
+import MainLayout from "../components/layouts/MainLayout/MainLayout";
 const DetailOrder = () => {
-  return (
-    <div>DetailOrder</div>
-  )
-}
+  return <MainLayout></MainLayout>;
+};
 
-export default DetailOrder
+export default DetailOrder;

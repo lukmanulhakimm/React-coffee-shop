@@ -1,16 +1,14 @@
-import Navbar from "./Navbar"
-import Footer from "./Footer"
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const MainLayout = (props) => {
   return (
     <>
-    <Navbar bg={props.bg} />
-    <main className=" font-jakarta">
-      {props.children}      
-    </main>
-    <Footer/>   
+      <Navbar bg={props.bg} border={props.border} borderP={props.borderP} />
+      <main className=" font-jakarta">{props.children}</main>
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default MainLayout
+export default MainLayout;

@@ -17,13 +17,16 @@ const Navbar = (props) => {
                 <h2>
                   <Link
                     to="/"
-                    className="font-md text-white clickable border-b border-primary"
+                    className={"font-md text-white clickable " + props.border}
                   >
                     Home
                   </Link>
                 </h2>
                 <h2>
-                  <Link to="/product" className="font-md text-white clickable">
+                  <Link
+                    to="/product"
+                    className={"font-md text-white clickable " + props.borderP}
+                  >
                     Product
                   </Link>
                 </h2>

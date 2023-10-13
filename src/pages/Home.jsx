@@ -3,7 +3,7 @@ import MainLayout from "../components/layouts/MainLayout/MainLayout";
 const Home = () => {
   return (
     <>
-      <MainLayout bg="bg-[#0B0909]/[30%]">
+      <MainLayout bg="bg-[#0B0909]/[30%] " border="border-b border-primary">
         <section className="md:wrapper w-full min-h-screen relative">
           <div className="md:hidden w-full h-[406px] bg-[url(/public/image/bg-3.webp)] bg-cover bg-center"></div>
           <div className="hidden md:block md:home-gradient min-h-screen w-full"></div>
