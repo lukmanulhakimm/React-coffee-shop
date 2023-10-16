@@ -1,3 +1,4 @@
+import Input from "../components/Forms/Input";
 const Register = () => {
   return (
     <>
@@ -19,60 +20,44 @@ const Register = () => {
               <h1 className="text-brown font-xxl pb-5">Register</h1>
               <p className="font-md">Fill out the form correctly</p>
               <form className="mt-5 font-lg font-semibold">
-                <label htmlFor="fullName">Full name</label>
-                <div className="form-control">
-                  <span>
-                    <img src="/public/icons/icon-name.webp" alt="iconsHumans" />
-                  </span>
-                  <input
-                    type="text"
-                    id="fullName"
-                    className="focus-within:input-focus input-control"
-                    placeholder="Enter Your Full Name"
-                  />
-                </div>
-                <label htmlFor="email">Email</label>
-                <div className="form-control">
-                  <span>
-                    <img src="/public/icons/mail.webp" alt="email" />
-                  </span>
-                  <input
-                    type="text"
-                    id="email"
-                    placeholder="  Enter Your Email"
-                    className="input-control focus-within:input-focus"
-                  />
-                </div>
-                <label htmlFor="password">Password</label>
-                <div className="form-control">
-                  <span>
-                    <img src="/public/icons/Password.webp" alt="password" />
-                  </span>
-                  <input
-                    type="password"
-                    id="password"
-                    placeholder=" Enter Your Password"
-                    className="input-control focus-within:input-focus"
-                  />
-                  <span>
-                    <img src="/public/icons/EyeSlash.webp" alt="eyes" />
-                  </span>
-                </div>
-                <label htmlFor="ConfirmPassword">Confirm Password</label>
-                <div className="form-control">
-                  <span>
-                    <img src="/public/icons/Password.webp" alt="password" />
-                  </span>
-                  <input
-                    type="password"
-                    id="ConfirmPassword"
-                    placeholder="Enter Your Password Again"
-                    className="input-control input-focus"
-                  />
-                  <span>
-                    <img src="/public/icons/EyeSlash.webp" alt="eyes" />
-                  </span>
-                </div>
+                <Input
+                  for="fullName"
+                  title="Full Name"
+                  imagePath="/public/icons/mail.webp"
+                  imageAlt="email"
+                  type="text"
+                  id="email"
+                  placeholder="Enter Your Name"
+                />
+                <Input
+                  for="email"
+                  title="Email"
+                  imagePath="/public/icons/mail.webp"
+                  imageAlt="email"
+                  type="text"
+                  id="email"
+                  placeholder="Enter Your Email"
+                />
+                <Input
+                  for="password"
+                  title="Password"
+                  imagePath="/public/icons/Password.webp"
+                  imageAlt="password"
+                  type="password"
+                  id="password"
+                  placeholder="Enter Your Password"
+                  isIconEye={true}
+                />
+                <Input
+                  for="password"
+                  title="Confirm Password"
+                  imagePath="/public/icons/Password.webp"
+                  imageAlt="password"
+                  type="password"
+                  id="password"
+                  placeholder="Enter Your Password Again"
+                  isIconEye={true}
+                />
                 <button className="btn w-full mt-6 bg-primary font-md py-[15px] cursor-pointer text-black">
                   <a href="" className="font-medium font-lg clickable">
                     Register

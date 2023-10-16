@@ -1,10 +1,20 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import ModalLogout from "../../Forms/ModalLogout";
+
 const Navbar = (props) => {
+  const [openModal, setOpenModal] = useState(false);
   const [showDown, setShowdown] = useState(false);
+  const navigate = useNavigate();
   return (
     <>
       <header className={"wrapper z-10 w-full fixed top-0 left-0 " + props.bg}>
+        <ModalLogout
+          confrimModal="Log out"
+          desc="Are you sure want to Log out"
+          open={openModal}
+          setOpen={setOpenModal}
+        />
         <nav className="container">
           <div className="flex items-center justify-between relative">
             <div className="flex gap-16">
@@ -95,6 +105,15 @@ const Navbar = (props) => {
                   </li>
                   <li className="group">
                     <Link
+                      onClick={() => {
+                        if (openModal === false) {
+                          setOpenModal(true);
+                          console.log("berhasil");
+                        } else {
+                          setOpenModal(false);
+                          console.log("gagal");
+                        }
+                      }}
                       to=""
                       className="text-base text-black py-2 mx-8 group-hover:text-primary"
                     >
@@ -151,7 +170,7 @@ const Navbar = (props) => {
                     </li>
                     <li className="group">
                       <Link
-                        to=""
+                        to="/historyOrder"
                         className="text-base text-black py-2 mx-8 group-hover:text-primary"
                       >
                         History
@@ -159,6 +178,15 @@ const Navbar = (props) => {
                     </li>
                     <li className="group">
                       <Link
+                        onClick={() => {
+                          if (openModal === false) {
+                            setOpenModal(true);
+                            console.log("berhasil");
+                          } else {
+                            setOpenModal(false);
+                            console.log("gagal");
+                          }
+                        }}
                         to=""
                         className="text-base text-black py-2 mx-8 group-hover:text-primary"
                       >

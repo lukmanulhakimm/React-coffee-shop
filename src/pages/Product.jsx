@@ -247,7 +247,7 @@ const Product = () => {
                             className="min"
                             min="0"
                             max="1000"
-                            value="300"
+                            defaultValue="300"
                             step="10"
                             id="min-range"
                           />
@@ -257,7 +257,7 @@ const Product = () => {
                             className="max"
                             min="0"
                             max="1000"
-                            value="700"
+                            defaultValue="700"
                             step="10"
                           />
                         </div>
@@ -267,7 +267,7 @@ const Product = () => {
                             id="min"
                             type="text"
                             name="min"
-                            value="300"
+                            defaultValue="300"
                             className="range-output"
                           />
                           <label htmlFor="max">IDR</label>
@@ -275,7 +275,7 @@ const Product = () => {
                             id="max"
                             type="text"
                             name="max"
-                            value="700"
+                            defaultValue="700"
                             className="range-output"
                           />
                         </div>

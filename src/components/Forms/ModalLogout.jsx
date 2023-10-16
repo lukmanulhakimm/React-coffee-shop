@@ -1,4 +1,4 @@
-const Modal = (props) => {
+const ModalLogout = (props) => {
   return (
     <>
       <div
@@ -14,21 +14,8 @@ const Modal = (props) => {
           <div className="w-full h-[1px] bg-dark-gray/40"></div>
           <div className="flex justify-end gap-2 px-2">
             <button
-              className="btn  font-semibold"
+              className="btn  font-semibold bg-primary"
               id="modal-confirm-btn"
-              onClick={() => {
-                if (props.open === true) {
-                  props.setOpen(false);
-                } else {
-                  props.setOpen(true);
-                }
-              }}
-            >
-              Cancel
-            </button>
-            <button
-              className="btn border bg-primary font-semibold"
-              id="modal-cancel-btn"
               onClick={() => {
                 if (props.open === true) {
                   props.setOpen(false);
@@ -39,6 +26,19 @@ const Modal = (props) => {
             >
               Confirm
             </button>
+            <button
+              className="btn border  font-semibold"
+              id="modal-cancel-btn"
+              onClick={() => {
+                if (props.open === true) {
+                  props.setOpen(false);
+                } else {
+                  props.setOpen(true);
+                }
+              }}
+            >
+              Cancel
+            </button>
           </div>
         </div>
       </div>
@@ -46,4 +46,4 @@ const Modal = (props) => {
   );
 };
 
-export default Modal;
+export default ModalLogout;

@@ -1,7 +1,7 @@
 const Input = (props) => {
   return (
     <>
-      <label htmlFor={props.for}>{props.name}</label>
+      <label htmlFor={props.for}>{props.title}</label>
       <div className="form-control">
         <span>
           <img src={props.imagePath} alt={props.imageAlt} />

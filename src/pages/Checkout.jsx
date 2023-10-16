@@ -4,12 +4,16 @@ import Modal from "../components/Forms/modal";
 
 const Checkout = () => {
   const [openModal, setOpenModal] = useState(false);
-
   return (
     <>
       <MainLayout bg="bg-[#0B0909]" mt="mt-[178px]">
         <div className="wrapper">
-          <Modal open={openModal} setOpen={setOpenModal} />
+          <Modal
+            confrimModal="Confirm checkout"
+            desc="Are you sure want to checkout?"
+            open={openModal}
+            setOpen={setOpenModal}
+          />
           <div className="container">
             <h1 className="md:font-title font-medium text-2xl text-[#0B132A]">
               Payment Details

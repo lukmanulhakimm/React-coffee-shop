@@ -12,7 +12,7 @@ const Home = () => {
           <div className="md:absolute py-[60px] md:py-0 home-gradient md:bg-none text-white md:min-h-screen md:h-full container">
             <div className="w-full md:max-w-[50%] h-full flex flex-col justify-center">
               <div className="max-w-[518px] w-full">
-                <h1 className="text-[24px] md:text-3xl lg:text-5xl text-white">
+                <h1 className="text-white text-[24px] md:text-3xl lg:text-5xl ">
                   Start Your Day with Coffee and Good Meals
                 </h1>
                 <div className="max-w-[488px] pt-6">
@@ -115,16 +115,40 @@ const Home = () => {
           <div className="container">
             <div className="grid-template">
               <div className="col-span-6 md:col-span-3">
-                <Cards imagePath="/public/image/image-1.webp" />
+                <Cards
+                  imagePath="/public/image/image-1.webp"
+                  nameProduct="Hazelnut Latte"
+                  desc="You can explore the menu that we provide with fun and have their
+              own taste and make your day better."
+                  idr="IDR 20.000"
+                />
               </div>
               <div className="col-span-6 md:col-span-3">
-                <Cards imagePath="/public/image/image-2.webp" />
+                <Cards
+                  imagePath="/public/image/image-2.webp"
+                  nameProduct="Hazelnut Latte"
+                  desc="You can explore the menu that we provide with fun and have their
+              own taste and make your day better."
+                  idr="IDR 20.000"
+                />
               </div>
               <div className="col-span-6 md:col-span-3">
-                <Cards imagePath="/public/image/image-3.webp" />
+                <Cards
+                  imagePath="/public/image/image-3.webp"
+                  nameProduct="Hazelnut Latte"
+                  desc="You can explore the menu that we provide with fun and have their
+              own taste and make your day better."
+                  idr="IDR 20.000"
+                />
               </div>
               <div className="col-span-6 md:col-span-3">
-                <Cards imagePath="/public/image/image-4.webp" />
+                <Cards
+                  imagePath="/public/image/image-4.webp"
+                  nameProduct="Hazelnut Latte"
+                  desc="You can explore the menu that we provide with fun and have their
+              own taste and make your day better."
+                  idr="IDR 20.000"
+                />
               </div>
             </div>
           </div>

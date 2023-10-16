@@ -37,7 +37,7 @@ const Profile = () => {
                   <form className="font-lg font-semibold w-full">
                     <Input
                       for="fullName"
-                      name="Full Name"
+                      title="Full Name"
                       imagePath="/public/icons/icon-name.webp"
                       imageAlt="full name"
                       type="text"
@@ -46,7 +46,7 @@ const Profile = () => {
                     />
                     <Input
                       for="email"
-                      name="Email"
+                      title="Email"
                       imagePath="/public/icons/mail.webp"
                       imageAlt="email"
                       type="text"
@@ -55,7 +55,7 @@ const Profile = () => {
                     />
                     <Input
                       for="phone"
-                      name="Phone"
+                      title="Phone"
                       imagePath="/public/icons/PhoneCall.webp"
                       imageAlt="phone"
                       type="text"
@@ -64,7 +64,7 @@ const Profile = () => {
                     />
                     <Input
                       for="password"
-                      name="Password"
+                      title="Password"
                       imagePath="/public/icons/Password.webp"
                       imageAlt="password"
                       type="password"
@@ -75,7 +75,7 @@ const Profile = () => {
 
                     <Input
                       for="address"
-                      name="Address"
+                      title="Address"
                       imagePath="/public/icons/Location.png"
                       imageAlt="address"
                       type="text"

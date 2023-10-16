@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Input from "../components/Forms/Input";
 
 const ForgotPassword = () => {
   return (
@@ -25,18 +26,15 @@ const ForgotPassword = () => {
                 We will send new password to your email
               </p>
               <form className="mt-5 font-lg font-semibold">
-                <label for="email">Email</label>
-                <div className="form-control">
-                  <span>
-                    <img src="/public/icons/mail.webp" alt="email" />
-                  </span>
-                  <input
-                    type="text"
-                    id="email"
-                    placeholder="  Enter Your Email"
-                    className="input-control focus-within:input-focus"
-                  />
-                </div>
+                <Input
+                  for="email"
+                  title="Email"
+                  imagePath="/public/icons/mail.webp"
+                  imageAlt="email"
+                  type="text"
+                  id="email"
+                  placeholder="Enter Your Email"
+                />
                 <button className="btn w-full bg-primary font-md py-[15px] cursor-pointer text-black">
                   <Link htmlFor="" className="font-medium font-lg clickable">
                     Login{" "}
