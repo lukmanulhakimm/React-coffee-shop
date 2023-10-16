@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Input from "../components/Forms/Input";
+import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 const Login = () => {
   const navigate = useNavigate();
@@ -10,20 +11,26 @@ const Login = () => {
   };
   const submitHandler = (e) => {
     e.preventDefault();
+    // console.log("okeee");
     const body = {
       email: e.target["user-email"].value,
       clientPassword: e.target.pwd.value,
     };
-    // console.log(LoginInformation);
-    const url = "https://be-coffee.vercel.app/auth";
+    const url = "http://localhost:8000/auth";
+
     axios
       .post(url, body)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-    // navigate("/product");
+      .then((res) => {
+        localStorage.setItem("token", res.data.data.token);
+        navigate("/product");
+      })
+      .catch((err) => {
+        toast.error("Wrong Username / password");
+      });
   };
   return (
     <>
+      <Toaster />
       <main className="wrapper w-full">
         <div className="grid-template w-full">
           <div className="md:block col-span-4 hidden h-screen max-h-full sticky bg-center top-0 bg-[url('/public/image/bg-2.webp')] bg-cover bg-no-repeat"></div>
@@ -85,16 +92,10 @@ const Login = () => {
                   Lupa Password?
                 </p>
                 <button
-                  className="btn w-full bg-primary font-md py-[15px] cursor-pointer text-black"
+                  className="btn w-full font-medium font-lg bg-primary font-md py-[15px] cursor-pointer text-black"
                   type="submit"
                 >
-                  <a
-                    href=""
-                    className="font-medium font-lg clickable"
-                    type="submit"
-                  >
-                    Login
-                  </a>
+                  Login
                 </button>
               </form>
               <div className="wrapper">
